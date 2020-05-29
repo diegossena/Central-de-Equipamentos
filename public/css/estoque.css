@@ -1,0 +1,112 @@
+table {
+    user-select: none;
+    border-spacing: 0;
+    margin: 0 auto 4rem auto;
+    box-shadow: 0 0 3px black;
+}
+tr:first-child{
+    cursor: unset;
+}
+tr {
+    cursor: pointer;
+}
+th {
+    background-color: rgb(50,54,57);
+    padding: .5rem;
+    color: #ececec;
+}
+td {
+    color: white;
+    padding: .5rem;
+    border-bottom: 1px solid #b5b5b5;
+    background-color: rgb(82,86,89);
+}
+td:first-child,td:nth-child(3) {
+    border-right: 1px solid #b5b5b5;
+}
+td:last-child,td:nth-child(3) {
+    border-left: 1px solid #b5b5b5;
+}
+#filters {
+    text-align: center;
+    color: white;
+    margin: .5rem 0;
+}
+#filters select, #filters input  {
+    padding: .5rem;
+    outline-color: #1d1d1d;
+}
+#filters select {
+    margin-right: -3px;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+#filters input {
+    margin-right: -4px;
+    border-left: none;
+    width: 100%;
+    max-width: 150px;
+}
+#filters div {
+    padding: 5px;
+    display: inline-block;
+    box-shadow: 0 0 3px black;
+    padding: 5px .5rem 9px .5rem;
+}
+#page button {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    padding: 15px 5px;;
+    color: white;
+    outline: 0;
+    border-radius: .25rem;
+    background-color: #343a40;
+    border: 1px solid;
+    width: 147px;
+    transition: .15s;
+    user-select: none;
+}
+#page button:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 3px black;
+    font-weight: bold;
+    cursor: pointer;
+}
+#page button span:last-child {
+    background-color: #17a2b8;
+    color: white;
+    padding: .3em .4em;
+    font-size: 80%;
+    font-weight: 100;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+.fade {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #00000080;
+    z-index: 1;
+}
+form {
+    border-radius: .25rem;
+    box-shadow: 0 0 5px black;
+    text-align: center;
+    width: 274px;
+    padding: .5rem;
+    margin: 25% auto;
+    z-index: 1;
+    background-color: #696969;
+}
+form * {
+    padding: .5rem;
+}
+form select[name="tipoDeSaida"] {
+    margin-bottom: .5rem;
+}

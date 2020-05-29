@@ -1,0 +1,88 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>CE JRB - Movimentações</title>
+		<meta name="viewport" content="height=device-height, initial-scale=1">
+		<link rel="icon" href="/img/icons/favicon.png">
+        <link rel="stylesheet" href="/css/default.css">
+		<link rel="stylesheet" href="/css/central.css">
+		<link rel="stylesheet" href="/css/movimentacoes.css">
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/eventos.js"></script>
+	</head>
+	<body>
+        <header>
+			<span>Central de Equipamentos</span>
+            <div class="user-options">
+                <span><%= nickname %></span>
+                <a href="/logout">Sair</a>
+			</div>
+		</header>
+		<nav class="left-bar">
+			<ul>
+				<li>
+					<a href="/central/etiquetas">
+						<svg viewBox="0 0 20 20">
+							<path d="M6 3h8a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm0 1a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V5a1 1 0 00-1-1H6z"></path>
+							<path d="M6.5 14a.5.5 0 01.5-.5h3a.5.5 0 010 1H7a.5.5 0 01-.5-.5zm0-2a.5.5 0 01.5-.5h6a.5.5 0 010 1H7a.5.5 0 01-.5-.5zm0-2a.5.5 0 01.5-.5h6a.5.5 0 010 1H7a.5.5 0 01-.5-.5zm0-2a.5.5 0 01.5-.5h6a.5.5 0 010 1H7a.5.5 0 01-.5-.5zm0-2a.5.5 0 01.5-.5h6a.5.5 0 010 1H7a.5.5 0 01-.5-.5z"></path>
+						</svg>
+						<span>Etiquetas</span>
+					</a>
+				</li>
+				<li>
+					<a href="/central/estoque">
+						<svg viewBox="0 0 20 20">
+							<path d="M2.125 13.17A.5.5 0 012.5 13H8a.5.5 0 01.5.5 1.5 1.5 0 003 0 .5.5 0 01.5-.5h5.5a.5.5 0 01.496.562l-.39 3.124A1.5 1.5 0 0116.117 18H3.883a1.5 1.5 0 01-1.489-1.314l-.39-3.124a.5.5 0 01.121-.393zm.941.83l.32 2.562a.5.5 0 00.497.438h12.234a.5.5 0 00.496-.438l.32-2.562H12.45a2.5 2.5 0 01-4.9 0H3.066zM5.81 2.563A1.5 1.5 0 016.98 2h6.04a1.5 1.5 0 011.17.563l3.7 4.625a.5.5 0 11-.78.624l-3.7-4.624A.5.5 0 0013.02 3H6.98a.5.5 0 00-.39.188l-3.7 4.624a.5.5 0 11-.78-.624l3.7-4.625z"></path>
+							<path d="M2.125 7.17A.5.5 0 012.5 7H8a.5.5 0 01.5.5 1.5 1.5 0 003 0A.5.5 0 0112 7h5.5a.5.5 0 01.496.562l-.39 3.124A1.5 1.5 0 0116.117 12H3.883a1.5 1.5 0 01-1.489-1.314l-.39-3.124a.5.5 0 01.121-.393zm.941.83l.32 2.562a.5.5 0 00.497.438h12.234a.5.5 0 00.496-.438L16.933 8H12.45a2.5 2.5 0 01-4.9 0H3.066z"></path>
+						</svg>
+						<span>Estoque</span>
+					</a>
+				</li>
+				<li>
+					<a href="/central/movimentacoes">
+						<svg viewBox="0 0 20 20">
+							<path d="M12.146 9.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L14.793 13l-2.647-2.646a.5.5 0 010-.708z"></path>
+							<path d="M4 13a.5.5 0 01.5-.5H15a.5.5 0 010 1H4.5A.5.5 0 014 13zm3.854-9.354a.5.5 0 010 .708L5.207 7l2.647 2.646a.5.5 0 01-.708.708l-3-3a.5.5 0 010-.708l3-3a.5.5 0 01.708 0z"></path>
+							<path d="M4.5 7a.5.5 0 01.5-.5h10.5a.5.5 0 010 1H5a.5.5 0 01-.5-.5z"></path>
+						</svg>
+						<span>Movimentações</span>
+					</a>
+				</li>
+				<li>
+					<a class="active" href="/central/Eventos">
+						<svg viewBox="-2 -3 20 20">
+							<path d="M14 0H2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"></path>
+  							<path d="M6.5 7a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2z"></path>
+						</svg>
+						<span>Eventos</span>
+					</a>
+				</li>
+				<li>
+					<a href="/central/historico">
+						<svg viewBox="0 0 20 20">
+							<path d="M6 3h8a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm0 1a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V5a1 1 0 00-1-1H6z"></path>
+							<path d="M15 8H5V7h10v1zm0 3H5v-1h10v1zm0 3H5v-1h10v1z"></path>
+							<path d="M7 16V8h1v8H7zm4 0V8h1v8h-1z"></path>
+						</svg>
+						<span>Histórico</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="content">
+			<div id="block"></div>
+			<div id="page">
+				<div id="filters">
+					<form id="search">
+						<input type="search" placeholder="Search">
+						<button type="submit">Enviar</button>
+					</form>
+					<div>
+						<label for="founds">Encontrados:</label>
+						<span id="founds">0</span>
+					</div>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>

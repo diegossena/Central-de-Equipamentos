@@ -1,0 +1,48 @@
+/* Definições
+--------------*/
+body {
+    background-color: rgb(50,54,57);
+}
+/* Etiquetas Page
+------------------*/
+#page {
+    text-align: center;
+}
+#page form{
+    text-align: center;
+    white-space: nowrap;
+}
+#page select, #page input, #page button{
+    padding: .5rem;
+    outline-color: #1d1d1d;
+}
+#page select {
+    margin-right: -3px;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+#page input{
+    border-left: none;
+    width: 100%;
+    max-width: 150px;
+}
+#page button {
+    margin-left: -3px;
+    background-color: white;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    border: 2px solid white;
+    font-weight: bold;
+}
+#page button:hover {
+    transition: .2s ease;
+    box-shadow: 0px 0px 3px white;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+iframe {
+    border: 1px solid rgb(50,54,57);
+    height: 94%;
+    width: 100%;
+}

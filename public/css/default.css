@@ -1,0 +1,23 @@
+/* Gerais
+---------*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    margin: 0;
+    font-family: "Segoe UI","Noto Color Emoji";
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+a,button {
+    cursor: pointer;
+    text-decoration: none;
+}
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}

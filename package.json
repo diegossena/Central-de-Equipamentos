@@ -1,0 +1,29 @@
+{
+  "name": "central-equipamentos",
+  "version": "1.0.0",
+  "description": "Central de Equipamentos",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "cookie": "^0.4.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "ldapjs": "^1.0.2",
+    "moment": "^2.24.0",
+    "mssql": "^6.2.0",
+    "mysql": "^2.18.1",
+    "pdfkit": "^0.11.0",
+    "socket.io": "^2.3.0",
+    "socket.io-cookie-parser": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "author": "Diêgo S. Sena",
+  "license": "ISC",
+  "keywords": []
+}

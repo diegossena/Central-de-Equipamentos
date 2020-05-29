@@ -1,0 +1,91 @@
+/* Definições
+--------------*/
+body {
+    background-color: rgb(50,54,57);
+}
+svg {
+    display: inline-block;
+    vertical-align: text-bottom;
+    overflow: hidden;
+    vertical-align: middle;
+    fill: white;
+    height: 30px;
+    width: 30px;
+}
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    background-color: #444444;
+    color: white;
+    width: 100%;
+    white-space: nowrap;
+}
+a {
+    display: block;
+    color: white;
+    user-select: none;
+}
+a:hover,a.active {
+    transition: background-color .1s ease;
+    background-color: #1d1d1d;
+}
+/* Header
+----------*/
+header span {
+    padding: 1rem 0 1rem 1rem;
+    font-weight: 100;
+    user-select: none;
+}
+.user-options {
+    display: flex;
+    margin-left: auto;
+}
+.user-options span {
+    display: block;
+    padding: 1rem;
+}
+.user-options a {
+    padding: 1rem;
+}
+/* Nav Toggler
+---------------*/
+.nav-toggler {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+/* Barra lateral
+-----------------*/
+nav.left-bar {
+    position: fixed;
+    display: flex;
+    top: 53px;
+    bottom: 0;
+    width: 105px;
+    background-color: #444444;
+}
+nav.left-bar ul {
+    width: 100%;
+}
+nav.left-bar ul li a {
+    padding: 1rem .1rem;
+}
+nav.left-bar ul li span {
+    color: white;
+    font-size: 7pt;
+}
+/* Content
+-----------*/
+.content {
+    padding-top: 53px;
+    display: flex;
+    height: 100%;
+}
+#block {
+    min-width: 105px;
+}
+#page {
+    width: 100%;
+}
